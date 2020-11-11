@@ -6,6 +6,9 @@ import io.agileintelligence.ppmtools.domain.Project;
 
 public interface ProjectRepository extends CrudRepository<Project,Long> 
 {
-	public Project findByProjectIdentifier(String projectId);		
+	public Project findByProjectIdentifier(String projectId);
+
+	@Override
+	Iterable<Project> findAll();
 
 }
