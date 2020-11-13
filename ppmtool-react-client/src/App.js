@@ -7,8 +7,13 @@ import { BrowserRouter as Router,Route} from 'react-router-dom';
 
 import AddProject from "./components/Project/AddProject";
 
+import store from "./store";
+
+import {Provider} from "react-redux";
+
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       <div className="App">
         <Header/>
@@ -16,6 +21,7 @@ function App() {
         <Route exact path="/addProject" component={AddProject}/>
       </div>
     </Router>
+    </Provider>
   );
 }
 
